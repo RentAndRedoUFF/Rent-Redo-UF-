@@ -700,7 +700,7 @@ section { padding: 110px 40px; }
 <button class="stt" id="stt" aria-label="Tillbaka till toppen">↑</button>
 
 <script>
-/* ── EmailJS v4 – rätt syntax ── */
+/* ── EmailJS v4 ── */
 emailjs.init({ publicKey: "MQWfnR8DBrdtBpKAC" });
 
 /* ── Cursor glow ── */
@@ -800,8 +800,12 @@ form.addEventListener('submit', async function(e) {
   };
 
   try {
-    /* Skickar med din enda template – template_f0c080r */
+    /* 1. Skickar förfrågan TILL DIG (RentRedoUF@gmail.com) */
+    await emailjs.send('service_ng3pgkg', 'template_rbhhmvq', templateParams);
+
+    /* 2. Skickar autosvar TILL KUNDEN */
     await emailjs.send('service_ng3pgkg', 'template_f0c080r', templateParams);
+
     showFeedback('success', '✅ Tack, ' + fname + '! Vi återkommer inom 3 arbetsdagar.');
     form.reset();
   } catch (err) {
