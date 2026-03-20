@@ -6,9 +6,6 @@
 <title>Rent och Redo UF – Hem & Trädgård i Stockholm</title>
 <meta name="description" content="Professionella och prisvärda hem- och trädgårdstjänster i Stockholm.">
 
-<!-- EmailJS v4 -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
 <!-- Fonts -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -254,7 +251,7 @@ section { padding: 110px 40px; }
               radial-gradient(ellipse 40% 60% at 20% 80%, rgba(184,154,90,0.06), transparent);
 }
 .mission-section .s-eyebrow { color: var(--sage); }
-.steps-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 3px; margin-top: 60px; }
+.steps-row { display: grid; grid-template-columns: repeat(3,1fr); gap: 3px; margin-top: 60px; }
 .step-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.06); padding: 36px 24px; transition: background 0.35s; cursor: default; }
 .step-card:first-child { border-radius: 16px 0 0 16px; }
 .step-card:last-child  { border-radius: 0 16px 16px 0; }
@@ -294,29 +291,32 @@ section { padding: 110px 40px; }
 .ci-icon { width: 42px; height: 42px; border-radius: 10px; background: #e8f4ed; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; }
 .ci-label { font-size: 10.5px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; color: var(--gray); margin-bottom: 3px; }
 .ci-val { font-size: 15px; font-weight: 600; color: var(--ink); }
-.form-wrap { background: var(--white); border-radius: 20px; padding: 42px; border: 1px solid var(--stone); box-shadow: 0 20px 60px rgba(14,26,20,0.07); }
-.form-row2 { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
-.fg { display: flex; flex-direction: column; gap: 7px; margin-bottom: 16px; }
-.fg label { font-size: 12.5px; font-weight: 700; letter-spacing: 0.05em; color: var(--ink); }
-.fg input, .fg textarea, .fg select {
-  background: var(--cream); border: 1.5px solid var(--stone);
-  border-radius: 10px; padding: 13px 16px;
-  font-family: 'Outfit', sans-serif; font-size: 14.5px; color: var(--ink);
-  transition: border-color 0.25s, box-shadow 0.25s, background 0.25s;
-  outline: none; -webkit-appearance: none; appearance: none;
+.contact-email-card {
+  background: var(--white); border-radius: 20px; padding: 52px 48px;
+  border: 1px solid var(--stone); box-shadow: 0 20px 60px rgba(14,26,20,0.07);
+  text-align: center; max-width: 560px;
 }
-.fg input:focus, .fg textarea:focus, .fg select:focus { border-color: var(--green); background: var(--white); box-shadow: 0 0 0 4px rgba(45,122,79,0.1); }
-.fg textarea { resize: vertical; min-height: 130px; }
-.fg select { cursor: pointer; }
-.form-submit { width: 100%; border: none; cursor: pointer; position: relative; font-family: 'Outfit', sans-serif; }
-.form-submit-label { display: flex; align-items: center; justify-content: center; gap: 10px; transition: opacity 0.3s; }
-.form-submit.loading .form-submit-label { opacity: 0; }
-.spinner { display: none; width: 20px; height: 20px; border-radius: 50%; border: 2.5px solid rgba(255,255,255,0.3); border-top-color: var(--white); animation: spin 0.7s linear infinite; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); }
-.form-submit.loading .spinner { display: block; }
-@keyframes spin { to { transform: translate(-50%,-50%) rotate(360deg); } }
-.form-feedback { display: none; margin-top: 16px; padding: 16px 20px; border-radius: 10px; font-size: 14px; font-weight: 600; text-align: center; line-height: 1.5; }
-.form-feedback.success { background: #e8f5ee; border: 1px solid rgba(45,122,79,0.3); color: #1c5c36; }
-.form-feedback.error   { background: #fdecea; border: 1px solid rgba(200,50,50,0.2); color: #c0392b; }
+.contact-email-card .company-name {
+  font-family: 'Cormorant Garamond', serif; font-size: 28px; font-weight: 700;
+  color: var(--ink); margin-bottom: 10px; letter-spacing: 0.04em;
+}
+.contact-email-card .company-tag {
+  font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--green); margin-bottom: 32px; display: block;
+}
+.contact-email-card .email-label {
+  font-size: 10.5px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--gray); margin-bottom: 10px;
+}
+.contact-email-link {
+  display: inline-flex; align-items: center; gap: 12px;
+  background: #f0f7f3; border: 1.5px solid rgba(45,122,79,0.2);
+  border-radius: 12px; padding: 16px 28px;
+  font-size: 17px; font-weight: 600; color: var(--green);
+  text-decoration: none; transition: background 0.25s, border-color 0.25s, transform 0.25s;
+}
+.contact-email-link:hover { background: var(--green); color: var(--white); border-color: var(--green); transform: translateY(-2px); }
+.contact-email-link .email-icon { font-size: 20px; }
 
 /* ── FOOTER ── */
 .footer { background: var(--ink); color: rgba(255,255,255,0.5); padding: 64px 40px 30px; }
@@ -353,8 +353,7 @@ section { padding: 110px 40px; }
   .about-grid, .contact-grid { grid-template-columns:1fr; gap:48px; }
   .target-grid { grid-template-columns:repeat(2,1fr); }
   .steps-row { grid-template-columns:1fr 1fr; }
-  .step-card:nth-child(1){border-radius:16px 0 0 0} .step-card:nth-child(2){border-radius:0 16px 0 0}
-  .step-card:nth-child(3){border-radius:0 0 0 16px} .step-card:nth-child(4){border-radius:0 0 16px 0}
+  .step-card:nth-child(1){border-radius:16px 0 0 16px} .step-card:nth-child(2){border-radius:0} .step-card:nth-child(3){border-radius:0 16px 16px 0}
   .footer-grid { grid-template-columns:1fr 1fr; }
 }
 @media(max-width:768px){
@@ -525,29 +524,23 @@ section { padding: 110px 40px; }
     <div class="reveal" style="text-align:center">
       <span class="s-eyebrow">Hur vi arbetar</span>
       <h2 class="s-title" style="color:var(--white)">Från förfrågan till<br><em style="color:var(--mint)">färdigt resultat</em></h2>
-      <p class="s-lead" style="color:rgba(255,255,255,0.42); margin:0 auto; text-align:center">Fyra enkla steg som gör hela processen smidig och stressfri.</p>
+      <p class="s-lead" style="color:rgba(255,255,255,0.42); margin:0 auto; text-align:center">Tre enkla steg som gör hela processen smidig och stressfri.</p>
     </div>
     <div class="steps-row">
       <div class="step-card reveal d1">
         <div class="step-num">01</div>
-        <div class="step-icon-wrap">📧</div>
-        <div class="step-title">Kontakt &amp; Offert</div>
-        <p class="step-desc">Fyll i formuläret nedan. Vi återkommer med en kostnadsfri offert inom 3 arbetsdagar.</p>
-      </div>
-      <div class="step-card reveal d2">
-        <div class="step-num">02</div>
         <div class="step-icon-wrap">📋</div>
         <div class="step-title">Planering</div>
         <p class="step-desc">Vi lägger upp en plan anpassad efter dina önskemål och din kalender.</p>
       </div>
-      <div class="step-card reveal d3">
-        <div class="step-num">03</div>
+      <div class="step-card reveal d2">
+        <div class="step-num">02</div>
         <div class="step-icon-wrap">🛠️</div>
         <div class="step-title">Utförande</div>
         <p class="step-desc">Vi jobbar effektivt och noggrant. Du hålls informerad under hela processen.</p>
       </div>
-      <div class="step-card reveal d4">
-        <div class="step-num">04</div>
+      <div class="step-card reveal d3">
+        <div class="step-num">03</div>
         <div class="step-icon-wrap">✅</div>
         <div class="step-title">Uppföljning</div>
         <p class="step-desc">Vi kontrollerar att du är helt nöjd med resultatet. Garantin gäller alltid.</p>
@@ -587,68 +580,20 @@ section { padding: 110px 40px; }
 <!-- KONTAKT -->
 <section id="contact" class="contact-section">
   <div class="s-inner">
-    <div class="contact-grid">
-      <div class="reveal-l">
-        <span class="s-eyebrow">Kontakt</span>
-        <h2 class="s-title">Hör av dig –<br><em>vi hjälper dig</em></h2>
-        <p class="s-lead">Fyll i formuläret så återkommer vi med ett förslag inom 3 arbetsdagar.</p>
-        <div class="c-info-list">
-          <div class="c-info-row">
-            <div class="ci-icon">📧</div>
-            <div>
-              <div class="ci-label">E-post</div>
-              <div class="ci-val"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="2371464d577146474c766563444e424a4f0d404c4e">[email&#160;protected]</a></div>
-            </div>
-          </div>
-          <div class="c-info-row">
-            <div class="ci-icon">📍</div>
-            <div>
-              <div class="ci-label">Område</div>
-              <div class="ci-val">Stockholm</div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="form-wrap reveal-r">
-        <form id="contactForm" novalidate>
-          <div class="form-row2">
-            <div class="fg">
-              <label for="fname">Förnamn *</label>
-              <input type="text" id="fname" placeholder="Anna" required>
-            </div>
-            <div class="fg">
-              <label for="lname">Efternamn</label>
-              <input type="text" id="lname" placeholder="Lindgren">
-            </div>
-          </div>
-          <div class="fg">
-            <label for="email">E-post *</label>
-            <input type="email" id="email" placeholder="anna@exempel.se" required>
-          </div>
-          <div class="fg">
-            <label for="phone">Telefon</label>
-            <input type="tel" id="phone" placeholder="070–000 00 00">
-          </div>
-          <div class="fg">
-            <label for="subject">Tjänst *</label>
-            <select id="subject" required>
-              <option value="">Välj tjänst…</option>
-              <option value="Trädgårdstjänster">Trädgårdstjänster</option>
-              <option value="Allmänna husprojekt">Allmänna husprojekt</option>
-              <option value="Annat">Annat</option>
-            </select>
-          </div>
-          <div class="fg">
-            <label for="message">Meddelande *</label>
-            <textarea id="message" placeholder="Berätta kort om vad du behöver hjälp med…" required></textarea>
-          </div>
-          <button type="submit" class="btn-primary form-submit">
-            <span class="form-submit-label">Skicka meddelande &nbsp;→</span>
-            <div class="spinner"></div>
-          </button>
-          <div class="form-feedback" id="formFeedback"></div>
-        </form>
+    <div style="text-align:center; margin-bottom:52px;" class="reveal">
+      <span class="s-eyebrow">Kontakt</span>
+      <h2 class="s-title">Hör av dig –<br><em>vi hjälper dig</em></h2>
+      <p class="s-lead" style="margin:0 auto">Skicka oss ett mejl så återkommer vi med ett förslag inom 3 arbetsdagar.</p>
+    </div>
+    <div style="display:flex; justify-content:center;" class="reveal">
+      <div class="contact-email-card">
+        <div class="company-name">Rent och Redo UF</div>
+        <span class="company-tag">Hem &amp; Trädgård · Stockholm</span>
+        <div class="email-label">E-post</div>
+        <a class="contact-email-link" href="mailto:RentRedoUF@gmail.com">
+          <span class="email-icon">📧</span>
+          RentRedoUF@gmail.com
+        </a>
       </div>
     </div>
   </div>
@@ -685,7 +630,7 @@ section { padding: 110px 40px; }
       <div class="f-col">
         <h4>Kontakt</h4>
         <ul>
-          <li><a href="/cdn-cgi/l/email-protection#5a083f342e083f3e350f1c1a3d373b333674393537"><span class="__cf_email__" data-cfemail="ecbe898298be898883b9aaac8b818d8580c28f8381">[email&#160;protected]</span></a></li>
+          <li><a href="mailto:RentRedoUF@gmail.com">RentRedoUF@gmail.com</a></li>
           <li><a href="#contact">Begär offert</a></li>
         </ul>
       </div>
@@ -699,10 +644,7 @@ section { padding: 110px 40px; }
 
 <button class="stt" id="stt" aria-label="Tillbaka till toppen">↑</button>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-/* ── EmailJS v4 ── */
-emailjs.init({ publicKey: "MQWfnR8DBrdtBpKAC" });
-
+<script>
 /* ── Cursor glow ── */
 const glow = document.getElementById('cursorGlow');
 document.addEventListener('mousemove', e => {
@@ -763,64 +705,7 @@ const sectionObs = new IntersectionObserver(entries => {
 }, { rootMargin: '-38% 0px -55% 0px' });
 document.querySelectorAll('section[id]').forEach(s => sectionObs.observe(s));
 
-/* ── Kontaktformulär med EmailJS ── */
-const form      = document.getElementById('contactForm');
-const feedback  = document.getElementById('formFeedback');
-const submitBtn = form.querySelector('.form-submit');
 
-form.addEventListener('submit', async function(e) {
-  e.preventDefault();
-
-  const fname   = document.getElementById('fname').value.trim();
-  const lname   = document.getElementById('lname').value.trim();
-  const email   = document.getElementById('email').value.trim();
-  const phone   = document.getElementById('phone').value.trim();
-  const subject = document.getElementById('subject').value;
-  const message = document.getElementById('message').value.trim();
-
-  if (!fname || !email || !subject || !message) {
-    showFeedback('error', '⚠️ Fyll i alla obligatoriska fält (markerade med *).');
-    return;
-  }
-  if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-    showFeedback('error', '⚠️ Ange en giltig e-postadress.');
-    return;
-  }
-
-  submitBtn.classList.add('loading');
-  submitBtn.disabled = true;
-  feedback.style.display = 'none';
-
-  const templateParams = {
-    name:    fname + (lname ? ' ' + lname : ''),
-    email:   email,
-    phone:   phone || 'Ej angivet',
-    title:   subject,
-    message: message
-  };
-
-  try {
-    /* Skickar förfrågan TILL DIG – ett mejl per skickning (gratisplan) */
-    await emailjs.send('service_ng3pgkg', 'template_rbhhmvq', templateParams);
-
-    showFeedback('success', '✅ Tack, ' + fname + '! Vi återkommer inom 3 arbetsdagar.');
-    form.reset();
-  } catch (err) {
-    console.error('EmailJS fel:', err);
-    showFeedback('error', '❌ Något gick fel. Skicka gärna ett mail direkt till RentRedoUF@gmail.com');
-  } finally {
-    submitBtn.classList.remove('loading');
-    submitBtn.disabled = false;
-  }
-});
-
-function showFeedback(type, msg) {
-  feedback.className = 'form-feedback ' + type;
-  feedback.textContent = msg;
-  feedback.style.display = 'block';
-  feedback.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-  if (type === 'success') setTimeout(() => { feedback.style.display = 'none'; }, 9000);
-}
 </script>
 </body>
 </html>
